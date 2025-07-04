@@ -13,12 +13,12 @@ public class MyArrayList<E> {
     // 默认初始容量
     private static final int INIT_CAP = 16;
 
-    //
+    // 无参构造, 使用默认容量
     public MyArrayList() {
         this(INIT_CAP);
     }
 
-    //
+    // 指定容量构造
     @SuppressWarnings({"unchecked"})
     public MyArrayList(int initCap) {
         data = (E[]) new Object[initCap];
@@ -97,10 +97,12 @@ public class MyArrayList<E> {
         return datum;
     }
 
+    // 获取当前元素个数
     public int size() {
         return size;
     }
 
+    // 检查当前是否为空
     public boolean isEmpty() {
         return size == 0;
     }
@@ -117,6 +119,7 @@ public class MyArrayList<E> {
         this.data = data;
     }
 
+    // 检查数组元素下表
     private void checkElementIndex(int index) {
         if (!isElementIndex(index)) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
@@ -127,6 +130,7 @@ public class MyArrayList<E> {
         return index >= 0 && index < size;
     }
 
+    // 检查插入元素下标
     private void checkPositionIndex(int index) {
         if (!isPositionIndex(index)) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
