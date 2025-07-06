@@ -119,7 +119,7 @@ public class MyArrayList<E> {
         this.data = data;
     }
 
-    // 检查数组元素下表
+    // 检查数组元素下标
     private void checkElementIndex(int index) {
         if (!isElementIndex(index)) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);

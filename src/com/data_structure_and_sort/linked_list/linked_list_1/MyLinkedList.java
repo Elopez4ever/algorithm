@@ -2,10 +2,11 @@ package com.data_structure_and_sort.linked_list.linked_list_1;
 
 import java.util.NoSuchElementException;
 
-public class LinkedList<E> {
+public class MyLinkedList<E> {
 
     private final Node<E> head, tail;
     private int size;
+
 
     private static class Node<E> {
         E val;
@@ -16,7 +17,7 @@ public class LinkedList<E> {
         }
     }
 
-    public LinkedList() {
+    public MyLinkedList() {
         head = new Node<>(null);
         tail = new Node<>(null);
         head.next = tail;
@@ -71,6 +72,15 @@ public class LinkedList<E> {
 
     public E get(int index) {
         return getNode(index).val;
+    }
+
+    public E getLast() {
+        return getNode(size).val;
+    }
+
+
+    public E getFirst() {
+        return getNode(0).val;
     }
 
     // ===== 修改操作 =====
